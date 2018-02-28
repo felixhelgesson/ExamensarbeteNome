@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grabable
   - Ice
+  - wall
   layers:
   - Default
   - TransparentFX
