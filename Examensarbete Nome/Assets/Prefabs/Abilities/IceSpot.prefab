@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135330604574641538}
   m_Layer: 0
   m_Name: IceSpot
-  m_TagString: Untagged
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,12 +65,12 @@ Projector:
   m_GameObject: {fileID: 1723680383421424}
   m_Enabled: 1
   serializedVersion: 2
-  m_NearClipPlane: 0.1
-  m_FarClipPlane: 2
-  m_FieldOfView: 30
+  m_NearClipPlane: 0.05
+  m_FarClipPlane: 1
+  m_FieldOfView: 15
   m_AspectRatio: 1
   m_Orthographic: 1
-  m_OrthographicSize: 2
+  m_OrthographicSize: 1
   m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
@@ -85,5 +85,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}

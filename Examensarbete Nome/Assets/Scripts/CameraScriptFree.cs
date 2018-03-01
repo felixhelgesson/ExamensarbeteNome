@@ -74,7 +74,7 @@ public class CameraScriptFree : MonoBehaviour
             if (targetAngleV < -20)
             {
                 targetAngleV = -20;
-                Debug.Log(targetAngleV);
+               // Debug.Log(targetAngleV);
             }
 
 
