@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Emils Scen.unity
+- path: Assets/Scenes/Probuild.unity
   isLoaded: 1
   isActive: 1
