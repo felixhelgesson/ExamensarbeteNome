@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Probuild.unity
+- path: Assets/Scenes/Felix Scen.unity
   isLoaded: 1
   isActive: 1
