@@ -121,22 +121,22 @@ MonoBehaviour:
         neutralWhiteClip: 10
       basic:
         postExposure: 0.56
-        temperature: -22
-        tint: 6.9
-        hueShift: -9
+        temperature: -18
+        tint: -0
+        hueShift: -13
         saturation: 0.94
-        contrast: 1.03
+        contrast: 1.099
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
-        currentEditingChannel: 0
+        currentEditingChannel: 1
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 0.845802, b: 0.6980672, a: 0}
-          power: {r: 1, g: 0.9451771, b: 0.8251627, a: 0}
-          offset: {r: 0.81611204, g: 1, b: 0.9185836, a: 0}
+          slope: {r: 0.9509036, g: 1, b: 0.9698302, a: 0}
+          power: {r: 0.9852713, g: 0.970542, b: 1, a: 0}
+          offset: {r: 0.97804374, g: 0.99027896, b: 1, a: 0}
         linear:
           lift: {r: 1, g: 1, b: 1, a: 0}
           gamma: {r: 1, g: 1, b: 1, a: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
             serializedVersion: 2
             m_Curve:
             - serializedVersion: 2
-              time: 0
+              time: 0.0024813896
               value: 0
               inSlope: 0.8611109
               outSlope: 0.8611109
