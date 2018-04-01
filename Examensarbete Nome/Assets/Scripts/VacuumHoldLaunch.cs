@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class VacuumHoldLaunch : MonoBehaviour
 {
-    GravitationalPull gP;
-    public Vector3 launchV;
-    public float launchF;
+    public GravitationalPull gP;
+    //public Vector3 launchV;
+    //public float launchF;
     private float stuckTimer, suckTimer;
     bool holdOn = false;
     bool suckTimerOn;
     bool hasthrown;
-    public bool canFire = false;
+    public bool canFire = true;
 
     public Animator anim;
     public Transform idleTarget;
@@ -21,24 +21,25 @@ public class VacuumHoldLaunch : MonoBehaviour
     void Start()
     {
         anim = GetComponentInParent<Animator>();
-        gP = GetComponentInParent<GravitationalPull>();
+        //- gP = GetComponentInParent<GravitationalPull>();
         stuckTimer = 3;
         suckTimer = 3;
-        target = idleTarget.transform.position;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
-        if (stuckTimer < 0 && canFire)
+        Debug.Log(holdOn);
+        Debug.Log(stuckTimer);
+        if (stuckTimer < 0)
         {
             holdOn = false;
             anim.SetBool("HoldingPlayer", false);
 
             anim.SetBool("ShootPlayer", true);
             Launch();
+            Debug.Log("LA");
 
 
             stuckTimer = 3;
@@ -46,7 +47,7 @@ public class VacuumHoldLaunch : MonoBehaviour
 
         if (holdOn)
         {
-        anim.SetBool("ShootPlayer", false);
+            anim.SetBool("ShootPlayer", false);
             anim.SetBool("PlayerGrabbed", true);
 
             anim.SetBool("HoldingPlayer", true);
@@ -56,7 +57,7 @@ public class VacuumHoldLaunch : MonoBehaviour
         }
         Sucking();
 
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().launched==false && hasthrown)
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().launched == false && hasthrown)
         {
             GetComponent<Collider>().enabled = true;
             hasthrown = false;
@@ -65,7 +66,7 @@ public class VacuumHoldLaunch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (stuckTimer > 0 && other.gameObject== GameObject.FindGameObjectWithTag("Player"))
+        if (stuckTimer > 0 && other.gameObject == GameObject.FindGameObjectWithTag("Player"))
         {
             holdOn = true;
             anim.SetBool("PlayerGrabbed", true);
@@ -95,13 +96,13 @@ public class VacuumHoldLaunch : MonoBehaviour
             gP.pullOn = true;
             suckTimer = 3;
             suckTimerOn = false;
-            
+
         }
     }
 
     public void Launch()
     {
-        if(gP.target.GetComponent<PlayerMovement>().launched == false)
+        if (gP.target.GetComponent<PlayerMovement>().launched == false)
         {
             gP.target.GetComponent<PlayerMovement>().launched = true;
         }
