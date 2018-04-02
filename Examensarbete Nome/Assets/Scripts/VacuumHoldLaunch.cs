@@ -104,9 +104,11 @@ public class VacuumHoldLaunch : MonoBehaviour
         hasthrown = true;
         gP.target.transform.parent = null;
         gP.rbTarget.isKinematic = false;
-        Vector3 LaunchForce = FireAt();
-        gP.rbTarget.AddForce(LaunchForce, ForceMode.VelocityChange);
-        //gP.rbTarget.velocity = FireAt2(speed);
+
+        gP.rbTarget.transform.position = Vector3.Lerp(gP.rbTarget.transform.position, target.transform.position, speed * Time.deltaTime);
+
+
+        //gP.rbTarget.velocity = this.transform.forward * speed;
 
         suckTimerOn = true;
         anim.SetBool("PlayerGrabbed", false);
