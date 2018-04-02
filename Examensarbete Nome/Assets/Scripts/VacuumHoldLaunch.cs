@@ -5,43 +5,34 @@ using UnityEngine;
 public class VacuumHoldLaunch : MonoBehaviour
 {
     public GravitationalPull gP;
-    //public Vector3 launchV;
-    //public float launchF;
+    public Animator anim;
+    public float speed;
+    public bool canFire = true;
+
     private float stuckTimer, suckTimer;
     bool holdOn = false;
     bool suckTimerOn;
     bool hasthrown;
-    public bool canFire = true;
 
-    public Animator anim;
-    public Transform idleTarget;
-    Vector3 target;
-    public float speed;
-    // Use this for initialization
+    public GameObject target;
+
     void Start()
     {
         anim = GetComponentInParent<Animator>();
-        //- gP = GetComponentInParent<GravitationalPull>();
         stuckTimer = 3;
         suckTimer = 3;
     }
 
 
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log(holdOn);
-        Debug.Log(stuckTimer);
+    
         if (stuckTimer < 0)
         {
             holdOn = false;
             anim.SetBool("HoldingPlayer", false);
-
             anim.SetBool("ShootPlayer", true);
             Launch();
-            Debug.Log("LA");
-
-
             stuckTimer = 3;
         }
 
@@ -49,7 +40,6 @@ public class VacuumHoldLaunch : MonoBehaviour
         {
             anim.SetBool("ShootPlayer", false);
             anim.SetBool("PlayerGrabbed", true);
-
             anim.SetBool("HoldingPlayer", true);
             gP.pullOn = false;
             stuckTimer -= Time.deltaTime;
@@ -62,6 +52,7 @@ public class VacuumHoldLaunch : MonoBehaviour
             GetComponent<Collider>().enabled = true;
             hasthrown = false;
         }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,6 +62,7 @@ public class VacuumHoldLaunch : MonoBehaviour
             holdOn = true;
             anim.SetBool("PlayerGrabbed", true);
         }
+
     }
 
     private void Hold()
@@ -85,6 +77,7 @@ public class VacuumHoldLaunch : MonoBehaviour
 
     void Sucking()
     {
+
         if (suckTimerOn)
         {
             suckTimer = -Time.deltaTime;
@@ -98,6 +91,7 @@ public class VacuumHoldLaunch : MonoBehaviour
             suckTimerOn = false;
 
         }
+
     }
 
     public void Launch()
@@ -110,16 +104,18 @@ public class VacuumHoldLaunch : MonoBehaviour
         hasthrown = true;
         gP.target.transform.parent = null;
         gP.rbTarget.isKinematic = false;
-        gP.rbTarget.velocity = FireAt2(target, speed);
+        Vector3 LaunchForce = FireAt();
+        gP.rbTarget.AddForce(LaunchForce, ForceMode.VelocityChange);
+        //gP.rbTarget.velocity = FireAt2(speed);
+
         suckTimerOn = true;
         anim.SetBool("PlayerGrabbed", false);
 
-        Debug.Log("launch");
     }
 
-    private Vector3 FireAt(Vector3 target/*, GameObject projectile*/)
+    private Vector3 FireAt()
     {
-        Vector3 toTarget = target - transform.position;
+        Vector3 toTarget = target.transform.position - transform.position;
 
         // Set up the terms we need to solve the quadratic equations.
         float gSquared = Physics.gravity.sqrMagnitude;
@@ -147,7 +143,7 @@ public class VacuumHoldLaunch : MonoBehaviour
         // Lowest-speed arc available:
         float T_lowEnergy = Mathf.Sqrt(Mathf.Sqrt(toTarget.sqrMagnitude * 4f / gSquared));
 
-        float T = T_min;// choose T_max, T_min, or some T in-between like T_lowEnergy
+        float T = T_max;// choose T_max, T_min, or some T in-between like T_lowEnergy
 
         // Convert from time-to-hit to a launch velocity:
         Vector3 velocity = toTarget / T - Physics.gravity * T / 2f;
@@ -156,11 +152,16 @@ public class VacuumHoldLaunch : MonoBehaviour
         // Apply the calculated velocity (do not use force, acceleration, or impulse modes)
     }
 
-    private Vector3 FireAt2(Vector3 target, float timeToTarget)
+    private Vector3 FireAt2(float timeToTarget)
     {
         // calculate vectors
         Vector3 origin = transform.position;
-        Vector3 toTarget = target - origin;
+        Debug.Log("orign"+origin);
+
+        Vector3 toTarget = target.transform.position - origin;
+        Debug.Log("target" + target.transform.position);
+
+
         Vector3 toTargetXZ = toTarget;
         toTargetXZ.y = 0;
 
@@ -184,16 +185,6 @@ public class VacuumHoldLaunch : MonoBehaviour
         return result;
     }
 
-
-    void Activate()
-    {
-        Debug.Log("hej");
-        canFire = true;
-    }
-    void Deactivate()
-    {
-        canFire = false;
-    }
 }
 
 
