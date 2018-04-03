@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1315087}
   m_Layer: 0
   m_Name: VaccumCleaner_Group
-  m_TagString: Untagged
+  m_TagString: Vaccum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2140,7 +2140,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4804634475291252, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64040245763627948, guid: 6df4dbe211d92a24d87bd0ba6269b633,
         type: 2}
@@ -2175,6 +2175,10 @@ Prefab:
     - target: {fileID: 4804634475291252, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777426776829130, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
+      propertyPath: m_Name
+      value: DoorParent(4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
@@ -3558,7 +3562,7 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 994cb7a394d43674e9d065184edfa254, type: 2}
     - target: {fileID: 100122, guid: bcc5d96a6373607459c086233109007b, type: 3}
       propertyPath: m_TagString
-      value: Vaccum
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcc5d96a6373607459c086233109007b, type: 3}
@@ -3737,10 +3741,10 @@ Transform:
   m_LocalPosition: {x: 119.818535, y: 625.68646, z: 251.31532}
   m_LocalScale: {x: 40.58421, y: 40.58419, z: 40.584187}
   m_Children:
+  - {fileID: 1867950667}
   - {fileID: 1892403951}
   - {fileID: 666599042}
   - {fileID: 233839993}
-  - {fileID: 1867950667}
   - {fileID: 1061892662}
   m_Father: {fileID: 1920948147}
   m_RootOrder: 10
@@ -4745,7 +4749,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4804634475291252, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 33693368011882526, guid: 6df4dbe211d92a24d87bd0ba6269b633,
         type: 2}
@@ -5171,7 +5175,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1122472
+  m_Name: pb_Mesh-33116
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -5654,7 +5658,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4804634475291252, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 33693368011882526, guid: 6df4dbe211d92a24d87bd0ba6269b633,
         type: 2}
@@ -5737,7 +5741,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4804634475291252, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 64040245763627948, guid: 6df4dbe211d92a24d87bd0ba6269b633,
         type: 2}
@@ -5882,9 +5886,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1625641275}
+  - component: {fileID: 1625641277}
+  - component: {fileID: 1625641276}
   m_Layer: 0
   m_Name: VaccumTarget
-  m_TagString: Untagged
+  m_TagString: Vaccum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5896,12 +5902,39 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1625641274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.075, y: 0.4592, z: 1.0977}
+  m_LocalPosition: {x: 0.0266, y: 0.049, z: 0.2781}
   m_LocalScale: {x: 10.429602, y: 11.004521, z: 16.169313}
   m_Children: []
   m_Father: {fileID: 2004430021}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1625641276
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625641274}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1625641277
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625641274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.006668855, y: 0.006668855, z: 0.0129044475}
+  m_Center: {x: -0.0020866832, y: 0, z: -0.007842937}
 --- !u!1001 &1655126219
 Prefab:
   m_ObjectHideFlags: 0
@@ -6329,7 +6362,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1462
+  m_Name: pb_Mesh-33388
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -7359,20 +7392,6 @@ Animator:
 Transform:
   m_PrefabParentObject: {fileID: 400122, guid: bcc5d96a6373607459c086233109007b, type: 3}
   m_PrefabInternal: {fileID: 941074188}
---- !u!64 &2004430022
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2004430017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!65 &2004430023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7380,7 +7399,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2004430017}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.13925855, y: 0.117601395, z: 0.1642258}
