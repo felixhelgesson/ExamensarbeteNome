@@ -52,14 +52,13 @@ public class GrabObject : MonoBehaviour {
             Ray ray = new Ray(transform.position + new Vector3(0, 0.5f, 0), transform.forward);
             if (!Physics.Raycast(ray, out grabbedObject, 1))
                 return;
-
             if (grabbedObject.transform.tag == "Grabable")
             {
                 animator.SetBool("grabbingObj", true);
                 pushableObject hitObjScript = grabbedObject.transform.GetComponent<pushableObject>();
                 hitObjScript.Grab(playerRb, grabbedObject.point);
                 isGrabbing = true;
-                Debug.Log("grab");
+                Debug.Log(grabbedObject.transform.name);
             }
         }
         //else

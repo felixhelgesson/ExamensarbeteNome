@@ -28,7 +28,7 @@ public class LedgeCollsion : MonoBehaviour {
         {
             Player.transform.parent = null;
             playerRb.constraints = RigidbodyConstraints.None|RigidbodyConstraints.FreezeRotation;
-            playerRb.AddForce(Vector3.up * 6, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * 3, ForceMode.Impulse);
             hanging = false;
             Debug.Log("jump");
             playerAnimator.SetBool("isHanging", false);            
