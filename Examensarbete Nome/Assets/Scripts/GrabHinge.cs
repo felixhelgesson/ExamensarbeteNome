@@ -9,6 +9,7 @@ public class GrabHinge : MonoBehaviour {
     {
         if (collision.gameObject.GetComponent<Rigidbody>() != null && !hasJoint)
         {
+            //collision.rigidbody.isKinematic = true;
             gameObject.AddComponent<HingeJoint>();
             gameObject.GetComponent<HingeJoint>().connectedBody = collision.rigidbody;
             gameObject.GetComponent<HingeJoint>().connectedAnchor = tomtehand.transform.position;

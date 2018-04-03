@@ -16,7 +16,8 @@ public class DoorScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "Player")
+        Debug.Log(col.gameObject.tag);
+        if(col.gameObject.tag == "Player" || col.gameObject.tag == "Vaccum")
         {
             doorOpen = true;
             DoorControll("Open");
