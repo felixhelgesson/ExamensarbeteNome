@@ -52,7 +52,7 @@ ModelImporter:
     4300002: DoorPart2
     4300004: DoorPart3
     4300006: DoorPart4
-    7400000: Take 001
+    7400000: Open_Garage
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -82,7 +82,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Open_Garage
       takeName: Take 001
       firstFrame: 1
       lastFrame: 80
@@ -92,7 +92,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
