@@ -13,12 +13,6 @@ public class WoodCutterAnimScript : MonoBehaviour
     public bool walkToTarget = false;
     public Transform endTransForm;
 
-    public bool targetPlayer;
-    public Transform player;
-    public Transform idleTarget;
-
-    public GameObject shootObj;
-
     Vector3 distPlayerToIdle;
     Vector3 target;
     public float speed = 1;
@@ -35,7 +29,6 @@ public class WoodCutterAnimScript : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        target = idleTarget.transform.position;
 
 
     }
@@ -82,30 +75,30 @@ public class WoodCutterAnimScript : MonoBehaviour
         projectile.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.VelocityChange);
     }
 
-    void ShootChuck()
-    {
-        distPlayerToIdle = this.transform.position - player.position;
-        if (distPlayerToIdle.magnitude < 10)
-        {
+    //void ShootChuck()
+    //{
+    //    distPlayerToIdle = this.transform.position - player.position;
+    //    if (distPlayerToIdle.magnitude < 10)
+    //    {
 
-            target = player.transform.position;
-           // Debug.Log("playerTarget");
-        }
-        else
-        {
-            //Debug.Log("Target");
-        }
-        target = idleTarget.transform.position;
+    //        target = player.transform.position;
+    //       // Debug.Log("playerTarget");
+    //    }
+    //    else
+    //    {
+    //        //Debug.Log("Target");
+    //    }
+    //    target = idleTarget.transform.position;
 
-        //FireAtPoint(target);
-        GameObject projectile = Instantiate(shootObj, transform.position, transform.rotation);
-        FireAt(target, projectile);
-        //Vector3 dir = (target - transform.position).normalized;
+    //    //FireAtPoint(target);
+    //    GameObject projectile = Instantiate(shootObj, transform.position, transform.rotation);
+    //    FireAt(target, projectile);
+    //    //Vector3 dir = (target - transform.position).normalized;
 
-        //test.GetComponent<Rigidbody>().AddForce(dir * force);
+    //    //test.GetComponent<Rigidbody>().AddForce(dir * force);
       
 
-    }
+    //}
 
     void Animations()
     {
@@ -159,11 +152,7 @@ public class WoodCutterAnimScript : MonoBehaviour
 
         }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Cutting_lpop_"))
-            {
-
-                ShootChuck();
-            }
+       
     }
     // Update is called once per frame
     void Update()

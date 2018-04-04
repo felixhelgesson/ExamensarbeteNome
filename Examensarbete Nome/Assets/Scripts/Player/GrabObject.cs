@@ -58,7 +58,7 @@ public class GrabObject : MonoBehaviour {
                 pushableObject hitObjScript = grabbedObject.transform.GetComponent<pushableObject>();
                 hitObjScript.Grab(playerRb, grabbedObject.point);
                 isGrabbing = true;
-                Debug.Log(grabbedObject.transform.name);
+                //Debug.Log(grabbedObject.transform.name);
             }
         }
         //else
