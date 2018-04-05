@@ -15,7 +15,6 @@ public class WoodCutterAnimScript : MonoBehaviour
 
     Vector3 distPlayerToIdle;
     Vector3 target;
-    public float speed = 1;
 
     public AudioSource audioS;
     public AudioClip walking;
@@ -36,44 +35,44 @@ public class WoodCutterAnimScript : MonoBehaviour
 
    
 
-    private void FireAt(Vector3 target, GameObject projectile)
-    {
-        Vector3 toTarget = target - transform.position;
+    //private void FireAt(Vector3 target, GameObject projectile)
+    //{
+    //    Vector3 toTarget = target - transform.position;
 
-        // Set up the terms we need to solve the quadratic equations.
-        float gSquared = Physics.gravity.sqrMagnitude;
-        float b = speed * speed + Vector3.Dot(toTarget, Physics.gravity);
-        float discriminant = b * b - gSquared * toTarget.sqrMagnitude;
+    //    // Set up the terms we need to solve the quadratic equations.
+    //    float gSquared = Physics.gravity.sqrMagnitude;
+    //    float b = speed * speed + Vector3.Dot(toTarget, Physics.gravity);
+    //    float discriminant = b * b - gSquared * toTarget.sqrMagnitude;
 
-        // Check whether the target is reachable at max speed or less.
-        if (discriminant < 0)
-        {
-            speed = speed * 2;
-            b = speed * speed + Vector3.Dot(toTarget, Physics.gravity);
-            discriminant = b * b - gSquared * toTarget.sqrMagnitude;
-            // Target is too far away to hit at this speed.
-            // Abort, or fire at max speed in its general direction?
-        }
+    //    // Check whether the target is reachable at max speed or less.
+    //    if (discriminant < 0)
+    //    {
+    //        speed = speed * 2;
+    //        b = speed * speed + Vector3.Dot(toTarget, Physics.gravity);
+    //        discriminant = b * b - gSquared * toTarget.sqrMagnitude;
+    //        // Target is too far away to hit at this speed.
+    //        // Abort, or fire at max speed in its general direction?
+    //    }
 
-        float discRoot = Mathf.Sqrt(discriminant);
+    //    float discRoot = Mathf.Sqrt(discriminant);
 
-        // Highest shot with the given max speed:
-        float T_max = Mathf.Sqrt((b + discRoot) * 2f / gSquared);
+    //    // Highest shot with the given max speed:
+    //    float T_max = Mathf.Sqrt((b + discRoot) * 2f / gSquared);
 
-        // Most direct shot with the given max speed:
-        float T_min = Mathf.Sqrt((b - discRoot) * 2f / gSquared);
+    //    // Most direct shot with the given max speed:
+    //    float T_min = Mathf.Sqrt((b - discRoot) * 2f / gSquared);
 
-        // Lowest-speed arc available:
-        float T_lowEnergy = Mathf.Sqrt(Mathf.Sqrt(toTarget.sqrMagnitude * 4f / gSquared));
+    //    // Lowest-speed arc available:
+    //    float T_lowEnergy = Mathf.Sqrt(Mathf.Sqrt(toTarget.sqrMagnitude * 4f / gSquared));
 
-        float T = T_min;// choose T_max, T_min, or some T in-between like T_lowEnergy
+    //    float T = T_min;// choose T_max, T_min, or some T in-between like T_lowEnergy
 
-        // Convert from time-to-hit to a launch velocity:
-        Vector3 velocity = toTarget / T - Physics.gravity * T / 2f;
+    //    // Convert from time-to-hit to a launch velocity:
+    //    Vector3 velocity = toTarget / T - Physics.gravity * T / 2f;
 
-        // Apply the calculated velocity (do not use force, acceleration, or impulse modes)
-        projectile.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.VelocityChange);
-    }
+    //    // Apply the calculated velocity (do not use force, acceleration, or impulse modes)
+    //    projectile.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.VelocityChange);
+    //}
 
     //void ShootChuck()
     //{
@@ -117,12 +116,12 @@ public class WoodCutterAnimScript : MonoBehaviour
             }
 
 
-            //if (anim.GetCurrentAnimatorStateInfo(0).IsName("Start_Walking_") && direction.magnitude > 3)
-            //{
-            //    transform.position = Vector3.MoveTowards(transform.position, endTransForm.position, step2);
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Start_Walking") && direction.magnitude > 3)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, endTransForm.position, step2);
 
-            //}
-            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Walking_Loop_") && direction.magnitude > 2)
+            }
+            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Walking_Loop") && direction.magnitude > 2)
             {
                 transform.position = Vector3.MoveTowards(transform.position, endTransForm.position, step);
 
