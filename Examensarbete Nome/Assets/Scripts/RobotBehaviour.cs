@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class RobotBehaviour : MonoBehaviour {
+public class RobotBehaviour : MonoBehaviour
+{
 
     //public bool wet;
     public GameObject gravCircle;
@@ -14,15 +14,23 @@ public class RobotBehaviour : MonoBehaviour {
     //public ParticleSystem smoke;
     bool dead = false;
 
-	// Use this for initialization
-	void Start () {
+    public NavMeshAgent agent;
+    public bool activated = false;
+    bool patrol = false;
+    public Transform[] patrolPoints;
+    private int currentPatrolPoint = 0;
+
+    // Use this for initialization
+    void Start()
+    {
         //wet = false;
         animator = GetComponent<Animator>();
         pathFollower = GetComponent<FollowPath>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //if (wet && !dead)
         //{
         //    WriteToLog("Robots wet-statement has been called");
@@ -37,7 +45,26 @@ public class RobotBehaviour : MonoBehaviour {
         //    dead = true;
         //    WriteToLog("Robots isDead = " + dead);
         //}	
-	}
+        patrol = activated && patrolPoints.Length > 0;
+        if (activated == true && patrolPoints.Length > 0)
+        {
+            if (agent.remainingDistance < 0.5f)
+            {
+
+                MoveToNextPoint();
+            }
+        }
+    }
+
+    void MoveToNextPoint()
+    {
+        if (patrolPoints.Length > 0)
+        {
+            agent.destination = patrolPoints[currentPatrolPoint].position;
+            currentPatrolPoint++;
+            currentPatrolPoint %= patrolPoints.Length;
+        }
+    }
 
     void Smoke()
     {
