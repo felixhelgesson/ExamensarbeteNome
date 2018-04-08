@@ -5,53 +5,56 @@ using UnityEngine.AI;
 public class RobotBehaviour : MonoBehaviour
 {
 
-    //public bool wet;
     public GameObject gravCircle;
-    //public GameObject launchZone;
     FollowPath pathFollower;
-    Animator animator;
-    //public InstantiatePickUp pickup;
-    //public ParticleSystem smoke;
-    bool dead = false;
+    public Animator animator;
+    public InstantiatePickUp pickup;
+    public ParticleSystem smoke;
+    public bool dead = false;
 
     public NavMeshAgent agent;
     public bool activated = false;
     bool patrol = false;
+    public bool triggerd = false;
+    public Transform triggerTrans;
     public Transform[] patrolPoints;
     private int currentPatrolPoint = 0;
 
-    // Use this for initialization
     void Start()
     {
-        //wet = false;
         animator = GetComponent<Animator>();
         pathFollower = GetComponent<FollowPath>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (wet && !dead)
-        //{
-        //    WriteToLog("Robots wet-statement has been called");
-        //    GetComponent<FollowPath>().functional = false;
-        //    Smoke();
-        //    animator.enabled = false;
-        //    pathFollower.functional = false;
-        //    Destroy(gravCircle);
-        //    Destroy(launchZone);
-        //    Destroy(GameObject.Find("key_geo"));
-        //    Invoke("SpitOut", 5);
-        //    dead = true;
-        //    WriteToLog("Robots isDead = " + dead);
-        //}	
-        patrol = activated && patrolPoints.Length > 0;
-        if (activated == true && patrolPoints.Length > 0)
+        if (dead)
+        {
+            activated = false;
+            Smoke();
+            animator.enabled = false;
+            pathFollower.functional = false;
+            Destroy(gravCircle);
+            Destroy(GameObject.Find("key_geo"));
+            Invoke("SpitOut", 5);
+            dead = true;
+        }
+        patrol = activated && patrolPoints.Length > 0 && triggerd == false && !dead;
+
+        if (patrol)
         {
             if (agent.remainingDistance < 0.5f)
             {
 
                 MoveToNextPoint();
+            }
+        }
+        else if (!dead && triggerd == true)
+        {
+            MoveToTriggerPoint();
+            if (agent.remainingDistance < 0.5f)
+            {
+                triggerd = false;
             }
         }
     }
@@ -66,23 +69,31 @@ public class RobotBehaviour : MonoBehaviour
         }
     }
 
-    void Smoke()
+    void MoveToTriggerPoint()
     {
-        //Instantiate(smoke, transform);
-    }
-
-    void SpitOut()
-    {
-        WriteToLog("SpitOut() has been invoked");
-        //pickup.DropPickUp();
-    }
-    public void WriteToLog(string msg)
-    {
-        string path = @"" + "mOutPut" + ".txt";
-        using (StreamWriter writer = File.AppendText(path))
+        if (triggerTrans != null)
         {
-            writer.WriteLine(msg + "\n");
-            writer.Close();
+            agent.destination = triggerTrans.position;
+
         }
     }
+
+    void Smoke()
+    {
+        Instantiate(smoke, transform);
+    }
+    void SpitOut()
+    {
+        //WriteToLog("SpitOut() has been invoked");
+        pickup.DropPickUp();
+    }
+    //public void WriteToLog(string msg)
+    //{
+    //    string path = @"" + "mOutPut" + ".txt";
+    //    using (StreamWriter writer = File.AppendText(path))
+    //    {
+    //        writer.WriteLine(msg + "\n");
+    //        writer.Close();
+    //    }
+    //}
 }

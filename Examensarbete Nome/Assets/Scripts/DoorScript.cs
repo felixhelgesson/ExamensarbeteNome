@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour {
 
     Animator animator;
+    public string startState;
     bool doorOpen;
 
 
@@ -12,6 +13,7 @@ public class DoorScript : MonoBehaviour {
     {
         doorOpen = false;
         animator = GetComponent<Animator>();
+        DoorControll(startState);
     }
 
     void OnTriggerEnter(Collider col)

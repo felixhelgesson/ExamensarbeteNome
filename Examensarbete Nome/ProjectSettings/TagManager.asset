@@ -12,6 +12,9 @@ TagManager:
   - climbTrigger
   - Grab
   - CleaningRobot
+  - VaccumTarget
+  - wallSwitch
+  - climbableObject
   layers:
   - Default
   - TransparentFX
