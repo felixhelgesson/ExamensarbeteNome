@@ -67,12 +67,12 @@ public class VacuumHoldLaunch : MonoBehaviour
 
     private void Hold()
     {
-        if (gP.target.transform.position != transform.position)
-        {
-            gP.target.transform.position = transform.position;
-        }
-        gP.target.transform.parent = transform;
-        gP.rbTarget.isKinematic = true;
+        //if (gP.target.transform.position != transform.position)
+        //{
+        //    gP.target.transform.position = transform.position;
+        //}
+        //gP.target.transform.parent = transform;
+        //gP.rbTarget.isKinematic = true;
     }
 
     void Sucking()
@@ -96,16 +96,16 @@ public class VacuumHoldLaunch : MonoBehaviour
 
     public void Launch()
     {
-        if (gP.target.GetComponent<PlayerMovement>().launched == false)
-        {
-            gP.target.GetComponent<PlayerMovement>().launched = true;
-        }
-        GetComponent<Collider>().enabled = false;
-        hasthrown = true;
-        gP.target.transform.parent = null;
-        gP.rbTarget.isKinematic = false;
+        //if (gP.target.GetComponent<PlayerMovement>().launched == false)
+        //{
+        //    gP.target.GetComponent<PlayerMovement>().launched = true;
+        //}
+        //GetComponent<Collider>().enabled = false;
+        //hasthrown = true;
+        //gP.target.transform.parent = null;
+        //gP.rbTarget.isKinematic = false;
 
-        gP.rbTarget.transform.position = Vector3.Lerp(gP.rbTarget.transform.position, target.transform.position, speed * Time.deltaTime);
+        //gP.rbTarget.transform.position = Vector3.Lerp(gP.rbTarget.transform.position, target.transform.position, speed * Time.deltaTime);
 
 
         //gP.rbTarget.velocity = this.transform.forward * speed;
