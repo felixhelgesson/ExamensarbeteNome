@@ -33,7 +33,7 @@ public class DoorScript : MonoBehaviour {
         {
             foreach (Light l in doorLights)
             {
-                l.intensity = 1;
+                l.intensity = 2;
             }
 
             turnedON = true;
