@@ -42,6 +42,10 @@ ModelImporter:
     400032: WCutter_PowerGenerator_HR
     400034: WcutterGenerator
     2100000: lambert1
+    2100002: CD_PowerCells
+    2100004: CD_Generator
+    2100006: CD_Computer
+    2100008: CD_Desk
     2300000: generator_Blade1
     2300002: generator_Blade10
     2300004: generator_Blade2
@@ -93,7 +97,27 @@ ModelImporter:
     7400000: GeneratorRunning
     7400002: GeneratorStarting
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CD_Computer
+    second: {fileID: 2100000, guid: 3d44a3081930fe746b64d369e1c085a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CD_Desk
+    second: {fileID: 2100000, guid: 21165f7d5aff08049939b53f2535ff39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CD_Generator
+    second: {fileID: 2100000, guid: da1bd203e1cfb1d44845e3e5adc7ab98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CD_PowerCells
+    second: {fileID: 2100000, guid: 9844ef855e1adc444bd139f423880756, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
