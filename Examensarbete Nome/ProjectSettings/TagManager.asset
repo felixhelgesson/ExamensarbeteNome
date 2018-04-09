@@ -15,6 +15,10 @@ TagManager:
   - VaccumTarget
   - wallSwitch
   - climbableObject
+  - PickUpVaccum
+  - PickUpWC
+  - PickUp
+  - Barrel
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,7 @@ public class VaccumSuck : MonoBehaviour {
         else if(col.gameObject.tag == "CleaningRobot")
         {
             vaccumAIScript.dead = true;
+            vaccumAIScript.destoryed = true;
             vaccumAIScript.activated = false;
             
             Destroy(col.gameObject.transform.parent.gameObject);

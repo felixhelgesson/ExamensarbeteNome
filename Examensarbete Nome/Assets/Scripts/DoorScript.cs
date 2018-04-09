@@ -5,23 +5,63 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour {
 
     Animator animator;
-    public string startState;
     bool doorOpen;
+    Light[] doorLights;
+    public GeneratorScript checkPower;
+    bool turnedON = false;
 
+    public bool finalDoor = false;
+    public PickUpHandler ph;
+    bool key1 = false;
+    bool key2 = false;
 
     void Start()
     {
         doorOpen = false;
         animator = GetComponent<Animator>();
-        DoorControll(startState);
+        doorLights = GetComponentsInChildren<Light>();
+        foreach (Light l in doorLights)
+        {
+            l.color = Color.yellow;
+            l.intensity = 0;
+        }
+    }
+
+    void Update()
+    {
+        if(checkPower.powerON == true && turnedON == false)
+        {
+            foreach (Light l in doorLights)
+            {
+                l.intensity = 1;
+            }
+
+            turnedON = true;
+        }
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "Player" || col.gameObject.tag == "Vaccum")
+        if(checkPower.powerON == true && col.gameObject.tag == "Grabable" || checkPower.powerON == true && col.gameObject.tag == "Vaccum")
         {
+            foreach (Light l in doorLights)
+            {
+                l.color = Color.green;
+            }
             doorOpen = true;
             DoorControll("Open");
+        }
+
+        else if(finalDoor == true)
+        {
+            FinalDoor();
+        }
+        else
+        {
+            foreach (Light l in doorLights)
+            {
+                l.color = Color.red;
+            }
         }
     }
 
@@ -31,11 +71,33 @@ public class DoorScript : MonoBehaviour {
         {
             doorOpen = false;
             DoorControll("Close");
+            foreach (Light l in doorLights)
+            {
+                l.color = Color.yellow;
+            }
         }
     }
 
-    void DoorControll(string direction)
+    public void DoorControll(string direction)
     {
         animator.SetTrigger(direction);
     }
+
+    void FinalDoor()
+    {
+        key1 = ph.wcKey;
+        key2 = ph.vaccumKey;
+
+        if(key1 == true && key2 == true)
+        {
+            foreach (Light l in doorLights)
+            {
+                l.color = Color.green;
+            }
+            doorOpen = true;
+            Debug.Log("OpenDoor");
+            DoorControll("Open");
+        }
+    }
+
 }
