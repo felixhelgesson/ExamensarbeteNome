@@ -11,6 +11,7 @@ public class RobotBehaviour : MonoBehaviour
     public InstantiatePickUp pickup;
     public ParticleSystem smoke;
     public bool dead = false;
+    public bool destoryed = false;
 
     public NavMeshAgent agent;
     public bool activated = false;
@@ -23,21 +24,21 @@ public class RobotBehaviour : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        pathFollower = GetComponent<FollowPath>();
     }
 
     void Update()
     {
-        if (dead)
+        if (dead && destoryed)
         {
             activated = false;
             Smoke();
             animator.enabled = false;
-            pathFollower.functional = false;
             Destroy(gravCircle);
             Destroy(GameObject.Find("key_geo"));
             Invoke("SpitOut", 5);
             dead = true;
+            destoryed = false;
+
         }
         patrol = activated && patrolPoints.Length > 0 && triggerd == false && !dead;
 
