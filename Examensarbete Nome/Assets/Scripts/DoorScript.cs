@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour {
+public class DoorScript : MonoBehaviour
+{
 
     Animator animator;
     bool doorOpen;
@@ -29,7 +30,7 @@ public class DoorScript : MonoBehaviour {
 
     void Update()
     {
-        if(checkPower.powerON == true && turnedON == false)
+        if (checkPower.powerON == true && turnedON == false)
         {
             foreach (Light l in doorLights)
             {
@@ -42,7 +43,7 @@ public class DoorScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if(checkPower.powerON == true && col.gameObject.tag == "Grabable" || checkPower.powerON == true && col.gameObject.tag == "Vaccum")
+        if (checkPower.powerON == true && col.gameObject.tag == "Grabable" || checkPower.powerON == true && col.gameObject.tag == "Vaccum")
         {
             foreach (Light l in doorLights)
             {
@@ -52,7 +53,7 @@ public class DoorScript : MonoBehaviour {
             DoorControll("Open");
         }
 
-        else if(finalDoor == true)
+        else if (finalDoor == true)
         {
             FinalDoor();
         }
@@ -67,15 +68,15 @@ public class DoorScript : MonoBehaviour {
 
     void OnTriggerExit(Collider col)
     {
-        if(doorOpen)
-        {
-            doorOpen = false;
-            DoorControll("Close");
-            foreach (Light l in doorLights)
-            {
-                l.color = Color.yellow;
-            }
-        }
+        //if (doorOpen)
+        //{
+        //    doorOpen = false;
+        //    DoorControll("Close");
+        //}
+        //foreach (Light l in doorLights)
+        //{
+        //    l.color = Color.yellow;
+        //}
     }
 
     public void DoorControll(string direction)
@@ -88,7 +89,7 @@ public class DoorScript : MonoBehaviour {
         key1 = ph.wcKey;
         key2 = ph.vaccumKey;
 
-        if(key1 == true && key2 == true)
+        if (key1 == true && key2 == true)
         {
             foreach (Light l in doorLights)
             {
