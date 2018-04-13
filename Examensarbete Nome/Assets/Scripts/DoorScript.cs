@@ -42,7 +42,9 @@ public class DoorScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if(checkPower.powerON == true && col.gameObject.tag == "Grabable" || checkPower.powerON == true && col.gameObject.tag == "Vaccum")
+        //Debug.Log(col.gameObject.tag + "Entered");
+
+        if (checkPower.powerON == true && col.gameObject.tag == "Grabable" || checkPower.powerON == true && col.gameObject.tag == "Vaccum")
         {
             foreach (Light l in doorLights)
             {
@@ -56,7 +58,7 @@ public class DoorScript : MonoBehaviour {
         {
             FinalDoor();
         }
-        else
+        else if (col.gameObject.tag == "Player")
         {
             foreach (Light l in doorLights)
             {
@@ -65,8 +67,24 @@ public class DoorScript : MonoBehaviour {
         }
     }
 
+    void OnTriggerStay(Collider col)
+    {
+        //Debug.Log(col.gameObject.tag + "Stay");
+
+        if (checkPower.powerON == true && col.gameObject.tag == "Grabable" || checkPower.powerON == true && col.gameObject.tag == "Vaccum")
+        {
+            foreach (Light l in doorLights)
+            {
+                l.color = Color.green;
+            }
+            doorOpen = true;
+            DoorControll("Open");
+        }
+    }
+
     void OnTriggerExit(Collider col)
     {
+        //Debug.Log(col.gameObject.tag + "Exit");
         if(doorOpen)
         {
             doorOpen = false;

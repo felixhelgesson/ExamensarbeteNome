@@ -41,12 +41,12 @@ public class ChasingRobot : MonoBehaviour
             dir.y = 0;
             rb.AddForce(dir * Time.deltaTime * moveSpeed, ForceMode.Impulse);
         }
-        if (isDead && !keyDropped)
-        {
-            keyDropped = true;
-            Destroy(shimmer);
-            iPickUp.DropPickUp();
-        }
+        //if (isDead && !keyDropped)
+        //{
+        //    keyDropped = true;
+        //    Destroy(shimmer);
+        //    iPickUp.DropPickUp();
+        //}
     }
     void OnCollisionEnter(Collision collision)
     {

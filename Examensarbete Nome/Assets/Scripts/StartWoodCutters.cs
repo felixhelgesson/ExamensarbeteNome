@@ -9,10 +9,6 @@ public class StartWoodCutters : MonoBehaviour
     public Animator garageDoor;
     public Animator deskGenerator;
  
-
-
-
-
     IEnumerator OnTriggerStay(Collider collider)
     {
         if (CheckPowerCell() == true && CheckPower() == true && Input.GetButton("Grab"))
@@ -23,6 +19,9 @@ public class StartWoodCutters : MonoBehaviour
                 garageDoor.SetBool("Open_Garage", true);
                 deskGenerator.SetBool("StartWCGenerator", true);
                 woodcutters[i].startUp = true;
+                garageDoor.SetBool("Open_Garage", false);
+
+
                 yield return new WaitForSeconds(6);
 
             }

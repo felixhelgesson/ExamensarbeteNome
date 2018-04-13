@@ -16,11 +16,13 @@ public class PickUpHandler : MonoBehaviour {
         if (other.tag == "PickUpWC")
         {
             PickUp pickUp = other.GetComponent<PickUp>();
+            pickUp.Collect();
             wcKey = true;
         }
         else if(other.tag == "PickUpVaccum")
         {
             PickUp pickUp = other.GetComponent<PickUp>();
+            pickUp.Collect();
             vaccumKey = true;
         }
     }
