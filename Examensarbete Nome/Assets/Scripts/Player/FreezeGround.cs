@@ -38,7 +38,7 @@ public class FreezeGround : MonoBehaviour {
             {
                 if (gameObject.GetComponent<CapsuleCollider>().material.name != "NoFriction (Instance)")
                 {
-                    Instantiate(ice, new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
+                    Instantiate(ice, new Vector3(transform.position.x, transform.position.y + 0.07f, transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
                     timer = 1;    
                 }               
             }            
