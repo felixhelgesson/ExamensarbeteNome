@@ -6,13 +6,18 @@ public class StartWoodCutters : MonoBehaviour
 {
 
     public WoodCutterAnimScript[] woodcutters;
+    public ParticleSystem[] particles;
     public Animator garageDoor;
     public Animator deskGenerator;
+
+    void Start()
+    {
+        for (int j = 0; j < particles.Length; j++)
+        {
+            particles[j].Stop();
+        }
+    }
  
-
-
-
-
     IEnumerator OnTriggerStay(Collider collider)
     {
         if (CheckPowerCell() == true && CheckPower() == true && Input.GetButton("Grab"))
@@ -23,9 +28,13 @@ public class StartWoodCutters : MonoBehaviour
                 garageDoor.SetBool("Open_Garage", true);
                 deskGenerator.SetBool("StartWCGenerator", true);
                 woodcutters[i].startUp = true;
+                for (int j = 0; j < particles.Length; j++)
+                {
+                    particles[j].Play();
+                }
                 yield return new WaitForSeconds(6);
-
             }
+
 
         }
 
