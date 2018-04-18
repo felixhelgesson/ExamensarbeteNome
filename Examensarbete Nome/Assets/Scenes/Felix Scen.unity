@@ -387,7 +387,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-5504
+  m_Name: pb_Mesh-40274
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1549,6 +1549,21 @@ Prefab:
       propertyPath: finalDoor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: doorOpenClose
+      value: 
+      objectReference: {fileID: 8300000, guid: 313e773b55e59d64fbac7c02e2d2b171, type: 3}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: denedAcces
+      value: 
+      objectReference: {fileID: 8300000, guid: 54b07706eadc2ea40859ea27ea2f9ae3, type: 3}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: deniedAccess
+      value: 
+      objectReference: {fileID: 8300000, guid: 54b07706eadc2ea40859ea27ea2f9ae3, type: 3}
     m_RemovedComponents:
     - {fileID: 54593864659879468, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
@@ -3294,7 +3309,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6907,7 +6922,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-4382
+  m_Name: pb_Mesh-39144
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -7177,6 +7192,21 @@ Prefab:
       propertyPath: finalDoor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: doorOpenClose
+      value: 
+      objectReference: {fileID: 8300000, guid: 313e773b55e59d64fbac7c02e2d2b171, type: 3}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: denedAcces
+      value: 
+      objectReference: {fileID: 8300000, guid: 54b07706eadc2ea40859ea27ea2f9ae3, type: 3}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: deniedAccess
+      value: 
+      objectReference: {fileID: 8300000, guid: 54b07706eadc2ea40859ea27ea2f9ae3, type: 3}
     m_RemovedComponents:
     - {fileID: 54593864659879468, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
@@ -7666,8 +7696,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 313e773b55e59d64fbac7c02e2d2b171, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -7677,9 +7707,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.2
-  MaxDistance: 3
+  MaxDistance: 7
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -7706,7 +7736,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -7873,7 +7903,7 @@ GameObject:
   - component: {fileID: 637063816}
   - component: {fileID: 637063817}
   m_Layer: 9
-  m_Name: Audio Source
+  m_Name: AS Woodcutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7941,7 +7971,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -7965,7 +7995,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0.994
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -8758,7 +8788,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9188,7 +9218,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -11685,8 +11715,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 313e773b55e59d64fbac7c02e2d2b171, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -11696,9 +11726,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.2
-  MaxDistance: 3
+  MaxDistance: 7
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -11725,7 +11755,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -12285,8 +12315,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 313e773b55e59d64fbac7c02e2d2b171, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -12296,9 +12326,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.2
-  MaxDistance: 3
+  MaxDistance: 7
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -12325,7 +12355,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -14134,6 +14164,21 @@ Prefab:
       propertyPath: ph
       value: 
       objectReference: {fileID: 1764455289}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: doorOpenClose
+      value: 
+      objectReference: {fileID: 8300000, guid: 313e773b55e59d64fbac7c02e2d2b171, type: 3}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: denedAcces
+      value: 
+      objectReference: {fileID: 8300000, guid: 54b07706eadc2ea40859ea27ea2f9ae3, type: 3}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: deniedAccess
+      value: 
+      objectReference: {fileID: 8300000, guid: 54b07706eadc2ea40859ea27ea2f9ae3, type: 3}
     m_RemovedComponents:
     - {fileID: 54593864659879468, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
@@ -14575,7 +14620,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-4620
+  m_Name: pb_Mesh-39380
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -14723,7 +14768,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-5720
+  m_Name: pb_Mesh-40488
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -15692,7 +15737,7 @@ Prefab:
     - target: {fileID: 82361117548779892, guid: 76c4dfd2660baab40b85a4b5a9a27671,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20038489938372350, guid: 76c4dfd2660baab40b85a4b5a9a27671,
         type: 2}
@@ -15729,6 +15774,11 @@ Prefab:
         type: 2}
       propertyPath: near clip plane
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82542518676622562, guid: 76c4dfd2660baab40b85a4b5a9a27671,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.556
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114817575960929076, guid: 76c4dfd2660baab40b85a4b5a9a27671, type: 2}
@@ -15906,6 +15956,21 @@ Prefab:
       propertyPath: ph
       value: 
       objectReference: {fileID: 1764455289}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: doorOpenClose
+      value: 
+      objectReference: {fileID: 8300000, guid: 313e773b55e59d64fbac7c02e2d2b171, type: 3}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: denedAcces
+      value: 
+      objectReference: {fileID: 8300000, guid: 54b07706eadc2ea40859ea27ea2f9ae3, type: 3}
+    - target: {fileID: 114515698422763698, guid: 6df4dbe211d92a24d87bd0ba6269b633,
+        type: 2}
+      propertyPath: deniedAccess
+      value: 
+      objectReference: {fileID: 8300000, guid: 54b07706eadc2ea40859ea27ea2f9ae3, type: 3}
     m_RemovedComponents:
     - {fileID: 54593864659879468, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6df4dbe211d92a24d87bd0ba6269b633, type: 2}
@@ -17089,7 +17154,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -18417,7 +18482,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -19613,7 +19678,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -19980,8 +20045,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 313e773b55e59d64fbac7c02e2d2b171, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -19991,9 +20056,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.2
-  MaxDistance: 3
+  MaxDistance: 7
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -20020,7 +20085,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
