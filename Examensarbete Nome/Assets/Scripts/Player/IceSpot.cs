@@ -13,7 +13,7 @@ public class IceSpot : MonoBehaviour {
 
 	void Start ()
     {
-        mat = (PhysicMaterial)Resources.Load("PhysicMaterial/NoFriction");
+        //mat = (PhysicMaterial)Resources.Load("Assets/MateAndTex/PhysicMaterial/Ice");
         materials = new List<OriginMaterial>();
 	}
 	
