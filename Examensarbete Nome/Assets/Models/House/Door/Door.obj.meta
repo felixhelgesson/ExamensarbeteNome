@@ -1,39 +1,18 @@
 fileFormatVersion: 2
-guid: 5d1e695e3fa02e847bf2ee5834f0069e
-timeCreated: 1522415589
+guid: 96e188dd432bca449b6a5f028f0f3426
+timeCreated: 1524128601
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: kitchen_Bench
-    100004: kitchen_Draw1
-    100006: kitchen_Draw2
-    100008: kitchen_Draw3
-    100010: kitchen_Draw4
-    400000: //RootNode
-    400002: kitchen_Bench
-    400004: kitchen_Draw1
-    400006: kitchen_Draw2
-    400008: kitchen_Draw3
-    400010: kitchen_Draw4
-    2100000: lambert1
-    2300000: kitchen_Bench
-    2300002: kitchen_Draw1
-    2300004: kitchen_Draw2
-    2300006: kitchen_Draw3
-    2300008: kitchen_Draw4
-    3300000: kitchen_Bench
-    3300002: kitchen_Draw1
-    3300004: kitchen_Draw2
-    3300006: kitchen_Draw3
-    3300008: kitchen_Draw4
-    4300000: kitchen_Bench
-    4300002: kitchen_Draw4
-    4300004: kitchen_Draw3
-    4300006: kitchen_Draw2
-    4300008: kitchen_Draw1
-    9500000: //RootNode
+    100000: Door
+    100002: //RootNode
+    400000: Door
+    400002: //RootNode
+    2100000: Default_Prototype
+    2300000: Door
+    3300000: Door
+    4300000: Door
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -108,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
