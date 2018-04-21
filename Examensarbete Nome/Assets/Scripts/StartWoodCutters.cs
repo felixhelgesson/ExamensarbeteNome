@@ -15,6 +15,8 @@ public class StartWoodCutters : MonoBehaviour
     public AudioClip wcGeneratorRunning;
     public AudioSource garageGateAS;
     public AudioClip garagetGateOpen;
+
+    public GeneratorScript gScript;
     AudioSource aS;
     bool wcOn = false;
 
@@ -78,7 +80,7 @@ public class StartWoodCutters : MonoBehaviour
 
     bool CheckPower()
     {
-        if (GameObject.Find("House/Generator_final/generator_grp/generator_geo/levergeo").GetComponent<GeneratorScript>().powerON)
+        if(gScript.powerON == true)
         {
 
             return true;

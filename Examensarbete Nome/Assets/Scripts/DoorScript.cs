@@ -130,7 +130,7 @@ public class DoorScript : MonoBehaviour
         {
             FinalDoor();
         }
-        else if (col.gameObject.tag == "Player" && doorOpen == false)
+        else if (col.gameObject.tag == "Player")
         {
             if(!aS.isPlaying)
             {
