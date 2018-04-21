@@ -17,6 +17,7 @@ public class WoodCutterAnimScript : MonoBehaviour
     Vector3 target;
 
     public AudioSource audioS;
+    public AudioClip start;
     public AudioClip walking;
     public AudioClip saw;
 
@@ -159,6 +160,10 @@ public class WoodCutterAnimScript : MonoBehaviour
         Animations();
 
 
+    }
+    void playStart()
+    {
+        audioS.PlayOneShot(start);
     }
 
     void playWalking()

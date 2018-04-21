@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject cameraTarget;
 
+    public AudioClip jumpSound;
+    public AudioClip landing;
+
     SkinnedMeshRenderer[] skinnedMeshRenderers;
     MeshRenderer[] meshRenderers;
 
@@ -151,6 +154,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollsionEnter(Collision collision)
+    {
+        Debug.Log(collision.relativeVelocity.magnitude);
+        if (collision.relativeVelocity.magnitude > 0.1)
+            runSound.PlayOneShot(landing);
+    }
+
     void Jump()
     {
         if (IsGrounded() && !isHanging() && !isGrabbing())
@@ -162,6 +172,7 @@ public class PlayerMovement : MonoBehaviour
 
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             animator.SetTrigger("isJumping");
+            runSound.PlayOneShot(jumpSound);
             runSound.Pause();
         }
     }

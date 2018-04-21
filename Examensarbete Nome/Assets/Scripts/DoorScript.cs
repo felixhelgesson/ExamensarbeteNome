@@ -81,7 +81,7 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (checkPower.powerON == true && col.gameObject.tag == "Grabable" || checkPower.powerON == true && col.gameObject.tag == "Vaccum")
+        if (checkPower.powerON == true && col.gameObject.tag == "Grabable"|| checkPower.powerON == true && col.gameObject.tag == "Vaccum")
         {
 
             doorState = 1;
@@ -99,7 +99,7 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "Vaccum" || col.gameObject.tag == "Grabable")
+        if (col.gameObject.tag == "Vaccum" || col.gameObject.tag == "Grabable" && checkPower.powerON == true )
         {
             aS.PlayOneShot(doorOpenClose);
 
@@ -120,7 +120,7 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "Vaccum" || col.gameObject.tag == "Grabable")
+        if (col.gameObject.tag == "Vaccum" && checkPower.powerON == true || col.gameObject.tag == "Grabable" && checkPower.powerON == true)
         {
             doorState = 1;
             doorOpen = true;
@@ -132,8 +132,11 @@ public class DoorScript : MonoBehaviour
         }
         else if (col.gameObject.tag == "Player" && doorOpen == false)
         {
-
+            if(!aS.isPlaying)
+            {
             aS.PlayOneShot(deniedAccess);
+
+            }
 
             doorState = 2;
             doorOpen = false;
@@ -155,6 +158,9 @@ public class DoorScript : MonoBehaviour
         {
             doorState = 1;
             doorOpen = true;
+            if (!aS.isPlaying)
+                aS.PlayOneShot(doorOpenClose);
+
 
         }
     }

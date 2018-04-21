@@ -5,7 +5,9 @@ using UnityEngine;
 public class GeneratorScript : MonoBehaviour {
 
     public bool powerON = false;
-    public AudioClip generatorSound;
+    public AudioClip generatorStartSound;
+    public AudioClip generatorRunSound;
+
     AudioSource aS;
     Animator generatorAnimCtrl;
     
@@ -22,13 +24,18 @@ public class GeneratorScript : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
         generatorAnimCtrl.SetBool("StartGenerator", true);
-        aS.PlayOneShot(generatorSound);
+        aS.PlayOneShot(generatorStartSound);
         powerON = true;
     }
 
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(!aS.isPlaying && powerON)
+        {
+            aS.PlayOneShot(generatorRunSound);
+        }
 		
 	}
 }

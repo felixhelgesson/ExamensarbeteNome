@@ -21,9 +21,13 @@ public class RobotBehaviour : MonoBehaviour
     public Transform[] patrolPoints;
     private int currentPatrolPoint = 0;
 
+    public AudioClip sparks;
+    AudioSource aS;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        aS = GetComponentInChildren<AudioSource>();
     }
 
     void Update()
@@ -38,6 +42,8 @@ public class RobotBehaviour : MonoBehaviour
             Invoke("SpitOut", 5);
             dead = true;
             destoryed = false;
+            aS.Stop();
+            aS.PlayOneShot(sparks);
 
         }
         patrol = activated && patrolPoints.Length > 0 && triggerd == false && !dead;
