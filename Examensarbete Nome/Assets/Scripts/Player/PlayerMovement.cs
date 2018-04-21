@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip landing;
 
+    public Transform resetT;
+
     SkinnedMeshRenderer[] skinnedMeshRenderers;
     MeshRenderer[] meshRenderers;
 
@@ -218,7 +220,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Die();
+            //Die();
+            transform.position = resetT.position;
         }
     }
 
