@@ -10,22 +10,43 @@ public class StartWoodCutters : MonoBehaviour
     public Animator garageDoor;
     public Animator deskGenerator;
 
+    public AudioClip computerOn;
+    public AudioSource wcGenAS;
+    public AudioClip wcGeneratorRunning;
+    public AudioSource garageGateAS;
+    public AudioClip garagetGateOpen;
+    AudioSource aS;
+    bool wcOn = false;
+
     void Start()
     {
         for (int j = 0; j < particles.Length; j++)
         {
             particles[j].Stop();
         }
+
+        aS = GetComponent<AudioSource>();
+    }
+
+    void LateUpdate()
+    {
+        if(!wcGenAS.isPlaying && wcOn)
+        {
+            wcGenAS.PlayOneShot(wcGeneratorRunning);
+        }
     }
  
     IEnumerator OnTriggerStay(Collider collider)
     {
-        if (CheckPowerCell() == true && CheckPower() == true && Input.GetButton("Grab"))
+        if (CheckPowerCell() == true && CheckPower() == true && Input.GetButton("Grab") && !wcOn)
         {
-
+            aS.PlayOneShot(computerOn);
             for (int i = 0; i < woodcutters.Length; i++)
             {
+                wcOn = true;
                 garageDoor.SetBool("Open_Garage", true);
+                wcGenAS.PlayOneShot(wcGeneratorRunning);
+                garageGateAS.PlayOneShot(garagetGateOpen);
                 deskGenerator.SetBool("StartWCGenerator", true);
                 woodcutters[i].startUp = true;
                 for (int j = 0; j < particles.Length; j++)
@@ -44,13 +65,12 @@ public class StartWoodCutters : MonoBehaviour
     {
         if (GameObject.Find("PowerCellEndPos").GetComponent<PowerCellScript>().powerCell)
         {
-            Debug.Log("pCON true");
+
             return true;
 
         }
         else
         {
-            Debug.Log("pCON false");
 
             return false;
         }
@@ -60,14 +80,12 @@ public class StartWoodCutters : MonoBehaviour
     {
         if (GameObject.Find("House/Generator_final/generator_grp/generator_geo/levergeo").GetComponent<GeneratorScript>().powerON)
         {
-            Debug.Log("power true");
 
             return true;
 
         }
         else
         {
-            Debug.Log("power false");
 
             return false;
         }

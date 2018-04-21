@@ -11,11 +11,17 @@ public class PlayerFire : MonoBehaviour {
     public Transform matchLocation;
     private float timer = 1;
 
+    public AudioClip matchLitClip;
+    public AudioClip matchOutClip;
+
+    AudioSource aS;
+
     public Animator anim;
     
 	// Use this for initialization
 	void Start ()
-    {        
+    {
+        aS = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -32,11 +38,13 @@ public class PlayerFire : MonoBehaviour {
                 Destroy(newMatch, 1);
                 matchLit = false;
                 timer = 1;
+                aS.PlayOneShot(matchOutClip);
                 anim.SetTrigger("grabMatch");
                 //fireParticleSystem.Stop();
             }
             else if(!matchLit)
             {
+                aS.PlayOneShot(matchLitClip);
                 anim.SetTrigger("grabMatch");
                 matchLit = true;    
                 newMatch = Instantiate(match, matchLocation.position, Quaternion.identity) as GameObject;

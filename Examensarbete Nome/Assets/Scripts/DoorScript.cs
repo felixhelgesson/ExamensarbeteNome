@@ -5,14 +5,17 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
 
-    Animator animator;
-    bool doorOpen;
-    Light doorLight;
-    public GeneratorScript checkPower;
-    bool turnedON = false;
-
     public bool finalDoor = false;
     public PickUpHandler ph;
+    public GeneratorScript checkPower;
+    public AudioClip doorOpenClose;
+    public AudioClip deniedAccess;
+
+    Animator animator;
+    AudioSource aS;
+    bool doorOpen;
+    Light doorLight;
+    bool turnedON = false;
     bool key1 = false;
     bool key2 = false;
 
@@ -23,10 +26,11 @@ public class DoorScript : MonoBehaviour
         doorOpen = false;
         animator = GetComponent<Animator>();
         doorLight = GetComponentInChildren<Light>();
+        aS = GetComponent<AudioSource>();
 
         doorLight.color = Color.yellow;
         doorLight.intensity = 0;
-        
+
     }
 
     void Update()
@@ -42,28 +46,31 @@ public class DoorScript : MonoBehaviour
 
     void DoorCtrl()
     {
-        switch(doorState)
+        switch (doorState)
         {
             case 3:
-                doorLight.color = Color.yellow;
+
                 doorOpen = false;
-               // DoorControll("Close");
+                doorLight.color = Color.yellow;
+                // DoorControll("Close");
                 animator.SetBool("OpenDoor", false);
                 animator.SetBool("ClosedDoor", true);
 
                 break;
 
             case 2:
-                doorLight.color = Color.red;
+
                 doorOpen = false;
-               // DoorControll("Close");
+                doorLight.color = Color.red;
+                // DoorControll("Close");
                 animator.SetBool("OpenDoor", false);
                 animator.SetBool("ClosedDoor", true);
                 break;
 
             case 1:
-                doorLight.color = Color.green;
+
                 doorOpen = true;
+                doorLight.color = Color.green;
                 //DoorControll("Open");
                 animator.SetBool("OpenDoor", true);
                 animator.SetBool("ClosedDoor", false);
@@ -74,11 +81,11 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (checkPower.powerON == true && col.gameObject.tag == "Grabable" || checkPower.powerON == true && col.gameObject.tag == "Vaccum")
+        if (checkPower.powerON == true && col.gameObject.tag == "Grabable"|| checkPower.powerON == true && col.gameObject.tag == "Vaccum")
         {
 
-            doorState = 1;            
-            //doorOpen = true;
+            doorState = 1;
+            aS.PlayOneShot(doorOpenClose);
             //DoorControll("Open");
         }
 
@@ -86,21 +93,26 @@ public class DoorScript : MonoBehaviour
         {
             FinalDoor();
         }
-    
+
 
     }
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "Vaccum"|| col.gameObject.tag == "Grabable")
+        if (col.gameObject.tag == "Vaccum" || col.gameObject.tag == "Grabable" && checkPower.powerON == true )
         {
-           
-        doorState = 3;
+            aS.PlayOneShot(doorOpenClose);
+
+            doorState = 3;
+            doorOpen = false;
         }
 
         else if (col.gameObject.tag == "Player")
         {
+
             doorState = 3;
+            doorOpen = false;
+
         }
 
 
@@ -108,18 +120,26 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-        if(col.gameObject.tag == "Vaccum" || col.gameObject.tag == "Grabable")
+        if (col.gameObject.tag == "Vaccum" && checkPower.powerON == true || col.gameObject.tag == "Grabable" && checkPower.powerON == true)
         {
             doorState = 1;
-     
+            doorOpen = true;
+
         }
         else if (finalDoor == true)
         {
             FinalDoor();
         }
-        else if (col.gameObject.tag == "Player")
+        else if (col.gameObject.tag == "Player" && doorOpen == false)
         {
+            if(!aS.isPlaying)
+            {
+            aS.PlayOneShot(deniedAccess);
+
+            }
+
             doorState = 2;
+            doorOpen = false;
         }
 
     }
@@ -137,8 +157,15 @@ public class DoorScript : MonoBehaviour
         if (key1 == true && key2 == true)
         {
             doorState = 1;
-                       
+            doorOpen = true;
+            if (!aS.isPlaying)
+                aS.PlayOneShot(doorOpenClose);
+
+
         }
     }
+
+
+
 
 }

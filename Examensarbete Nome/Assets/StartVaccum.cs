@@ -14,10 +14,24 @@ public class StartVaccum : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "VaccumTarget" || col.gameObject.tag == "CleaningRobot")
+        if (col.gameObject.tag == "VaccumTarget" && !vaccumAIScript.activated && !vaccumAIScript.dead)
         {
             vaccumAIScript.animator.SetBool("isActive", true);
             audioS.Play();
+
+            vaccumAIScript.triggerTrans = col.gameObject.transform;
+            vaccumAIScript.triggerd = true;
+            vaccumAIScript.activated = true;
+        }
+        else if(col.gameObject.tag == "CleaningRobot" && !vaccumAIScript.dead)
+        {
+
+            vaccumAIScript.triggerTrans = col.gameObject.transform;
+            vaccumAIScript.triggerd = true;
+            vaccumAIScript.activated = true;
+        }
+        else if (col.gameObject.tag == "VaccumTarget" && vaccumAIScript.activated && !vaccumAIScript.dead)
+        {
 
             vaccumAIScript.triggerTrans = col.gameObject.transform;
             vaccumAIScript.triggerd = true;
