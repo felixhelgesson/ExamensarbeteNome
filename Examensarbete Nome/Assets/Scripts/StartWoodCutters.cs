@@ -15,6 +15,7 @@ public class StartWoodCutters : MonoBehaviour
     public AudioClip wcGeneratorRunning;
     public AudioSource garageGateAS;
     public AudioClip garagetGateOpen;
+    public Material material1, material2;
 
     public GeneratorScript gScript;
     AudioSource aS;
@@ -26,7 +27,6 @@ public class StartWoodCutters : MonoBehaviour
         {
             particles[j].Stop();
         }
-
         aS = GetComponent<AudioSource>();
     }
 
@@ -68,6 +68,7 @@ public class StartWoodCutters : MonoBehaviour
         if (GameObject.Find("PowerCellEndPos").GetComponent<PowerCellScript>().powerCell)
         {
 
+            GetComponent<Renderer>().material = material2;
             return true;
 
         }
