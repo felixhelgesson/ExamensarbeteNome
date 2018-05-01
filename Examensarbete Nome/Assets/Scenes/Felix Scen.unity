@@ -4780,7 +4780,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &284918562
 MonoBehaviour:
@@ -4790,7 +4790,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 284918561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52da363910857b4ba1c1943bf2f2a60, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: -334000983
@@ -4809,7 +4809,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.13333334
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: bf41cd4d1eb181947a61e36829e6f2eb, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 26adcf3a89352c34ba28be70c023c071, type: 2}
 --- !u!4 &284918563
 Transform:
   m_ObjectHideFlags: 0
@@ -26349,7 +26349,7 @@ Prefab:
     - target: {fileID: 82361117548779892, guid: 76c4dfd2660baab40b85a4b5a9a27671,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20038489938372350, guid: 76c4dfd2660baab40b85a4b5a9a27671,
         type: 2}
