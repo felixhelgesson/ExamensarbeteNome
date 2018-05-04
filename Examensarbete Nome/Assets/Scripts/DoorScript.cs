@@ -163,6 +163,17 @@ public class DoorScript : MonoBehaviour
 
 
         }
+        else
+        {
+            if (!aS.isPlaying)
+            {
+                aS.PlayOneShot(deniedAccess);
+
+            }
+
+            doorState = 2;
+            doorOpen = false;
+        }
     }
 
 

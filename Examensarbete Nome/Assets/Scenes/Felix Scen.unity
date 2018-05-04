@@ -11620,81 +11620,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300070, guid: f38152a9e9c46f149b8d249cc1131b06, type: 3}
---- !u!1 &550556586
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1827331512412216, guid: e1d92cf147f824c4491754aed2191747,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 550556587}
-  - component: {fileID: 550556589}
-  - component: {fileID: 550556588}
-  m_Layer: 9
-  m_Name: cable_geo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &550556587
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4949539335911288, guid: e1d92cf147f824c4491754aed2191747,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 550556586}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000000023588568, y: 0.02, z: -0.0000000011550534}
-  m_LocalScale: {x: 0.645108, y: 2.569799, z: 0.645108}
-  m_Children: []
-  m_Father: {fileID: 2057726661}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &550556588
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23493428057453680, guid: e1d92cf147f824c4491754aed2191747,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 550556586}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 4ea03014f236e7c4596c9db904609441, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &550556589
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 33858064337974732, guid: e1d92cf147f824c4491754aed2191747,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 550556586}
-  m_Mesh: {fileID: 4300022, guid: 04f2190cba5a4564fabff2a98224036a, type: 3}
 --- !u!1 &550818203 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 179686, guid: 6369a325aaf71a246bea5dc89e26fe69, type: 2}
@@ -13662,7 +13587,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.5
+  MinDistance: 2.0798035
   MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
@@ -24042,7 +23967,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.74
+  m_Volume: 0.645
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25951,6 +25876,115 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 977e7278d3486f1489724a6d226b9ca0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1222632494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1222632496}
+  - component: {fileID: 1222632495}
+  m_Layer: 0
+  m_Name: ASForrest (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1222632495
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1222632494}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b95882798bd3a474198dda68baf6ca1e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.625
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 100.4
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!4 &1222632496
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1222632494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 146.49, y: 17.79, z: 375.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225843712
 GameObject:
   m_ObjectHideFlags: 0
@@ -29737,7 +29771,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2826
+  m_Name: pb_Mesh-9790
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -29964,6 +29998,10 @@ Prefab:
     - target: {fileID: 4028547417992428, guid: f1ca6fa9f2541494e83e57ba4db57cb9, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.5741509
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335661972858834, guid: f1ca6fa9f2541494e83e57ba4db57cb9, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ca6fa9f2541494e83e57ba4db57cb9, type: 2}
@@ -31554,6 +31592,11 @@ Prefab:
         type: 2}
       propertyPath: m_Volume
       value: 0.036
+      objectReference: {fileID: 0}
+    - target: {fileID: 82361117548779892, guid: 76c4dfd2660baab40b85a4b5a9a27671,
+        type: 2}
+      propertyPath: MinDistance
+      value: 0.5996704
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114817575960929076, guid: 76c4dfd2660baab40b85a4b5a9a27671, type: 2}
@@ -33516,7 +33559,7 @@ AudioSource:
   MinDistance: 0.2
   MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -35479,7 +35522,7 @@ Transform:
   m_Children:
   - {fileID: 521107635}
   m_Father: {fileID: 2057726661}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1749288254 stripped
 Transform:
@@ -35770,8 +35813,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1764455286}
-  m_LocalRotation: {x: 0.000000016242526, y: 0.9047366, z: -0.0000000049720525, w: 0.4259716}
-  m_LocalPosition: {x: 124.831, y: 10.47, z: 389.722}
+  m_LocalRotation: {x: 0, y: 0.9207771, z: 0, w: 0.39008933}
+  m_LocalPosition: {x: 127.33311, y: 8.457881, z: 386.62616}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 1615812220}
@@ -35903,7 +35946,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 6effdfe6380ecd04da00d3db1847df53, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.381
+  m_Volume: 0.14
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -38199,6 +38242,10 @@ Prefab:
     - target: {fileID: 1335661972858834, guid: f1ca6fa9f2541494e83e57ba4db57cb9, type: 2}
       propertyPath: m_Name
       value: Duct Tape (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335661972858834, guid: f1ca6fa9f2541494e83e57ba4db57cb9, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ca6fa9f2541494e83e57ba4db57cb9, type: 2}
@@ -43893,7 +43940,6 @@ Transform:
   m_LocalPosition: {x: -0.0007178386, y: 0.00052550447, z: 0.00445303}
   m_LocalScale: {x: 0.045003794, y: 0.026667181, z: 0.06748792}
   m_Children:
-  - {fileID: 550556587}
   - {fileID: 1747450627}
   m_Father: {fileID: 574241608}
   m_RootOrder: 4

@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
         if (velocityAxis.magnitude > 0f && !isGrabbing() && !isHanging())
         {
             //transform.rotation = Quaternion.LookRotation(velocityAxis);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(velocityAxis), Time.deltaTime * 10);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(velocityAxis), Time.deltaTime * 15);
             animator.SetBool("Running", true);
         }
 
