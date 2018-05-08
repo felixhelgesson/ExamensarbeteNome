@@ -32,6 +32,7 @@ public class StartWoodCutters : MonoBehaviour
 
     void LateUpdate()
     {
+        CheckPowerCell();
         if(!wcGenAS.isPlaying && wcOn)
         {
             wcGenAS.PlayOneShot(wcGeneratorRunning);
